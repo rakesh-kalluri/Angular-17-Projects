@@ -4,4 +4,13 @@
 <div class="loader" id="loader"></div>
 
 <!-- Image container -->
-<div class="image-container" id="image-container"></div>
+<div class="image-container" id="image-container">
+  @if (photos) { @for (photo of photos; track photo?.id) {
+  <a href="{{ photo.links.html }}" target="_blank"></a>
+  <img
+    src="{{ photo.urls.regular }}"
+    alt="{{ photo.alt_description }}"
+    title="{{ photo.alt_description }}"
+  />
+  } }
+</div>

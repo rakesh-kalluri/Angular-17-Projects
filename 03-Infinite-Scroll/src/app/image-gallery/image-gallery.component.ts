@@ -9,11 +9,13 @@ import { ImageGalleryService } from '../image-gallery.service';
   styleUrl: './image-gallery.component.css',
 })
 export class ImageGalleryComponent implements OnInit {
+  photos: any = [];
   private imageGalleryService = inject(ImageGalleryService);
 
   ngOnInit(): void {
-    this.imageGalleryService.getPhotosFromApi().subscribe((images) => {
-      console.log(images);
+    this.imageGalleryService.getPhotosFromApi().subscribe((photos: any) => {
+      this.photos = photos;
+      console.log(this.photos);
     });
   }
 }

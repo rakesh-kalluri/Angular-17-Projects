@@ -12,6 +12,6 @@ export class ImageGalleryService {
   constructor(private http: HttpClient) {}
 
   getPhotosFromApi() {
-    return this.http.get(apiUrl);
+    return this.http.get<any>(apiUrl);
   }
 }
