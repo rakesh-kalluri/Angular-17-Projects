@@ -1,0 +1,28 @@
+@if (!loading) {
+<div class="quote-container" id="quote-container">
+  <!-- Quote -->
+  <div class="quote-text">
+    <i class="fas fa-quote-left"></i>
+    <span id="quote">{{ currentQuote.text }}</span>
+  </div>
+  <!-- Author -->
+  <div class="quote-author">
+    <span id="author">{{ currentQuote.author }}</span>
+  </div>
+  <!-- buttons -->
+  <div class="button-container">
+    <button
+      class="twitter-button"
+      id="twitter"
+      title="Tweet This!"
+      (click)="tweetQuote()"
+    >
+      Tweet
+      <i class="fab fa-twitter"></i>
+    </button>
+    <button id="new-quote" (click)="displayRandomQuote()">New Quote</button>
+  </div>
+</div>
+} @else {
+<app-loading-spinner></app-loading-spinner>
+}
