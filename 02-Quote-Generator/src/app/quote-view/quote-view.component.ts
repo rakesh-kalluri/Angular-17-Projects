@@ -35,4 +35,9 @@ export class QuoteViewComponent implements OnInit {
     }
     this.loading = false;
   }
+
+  tweetQuote() {
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${this.currentQuote.text} - ${this.currentQuote.author}`;
+    window.open(tweetUrl, '_blank');
+  }
 }

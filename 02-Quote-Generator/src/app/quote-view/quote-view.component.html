@@ -11,11 +11,16 @@
   </div>
   <!-- buttons -->
   <div class="button-container">
-    <button class="twitter-button" id="twitter" title="Tweet This!">
+    <button
+      class="twitter-button"
+      id="twitter"
+      title="Tweet This!"
+      (click)="tweetQuote()"
+    >
       Tweet
       <i class="fab fa-twitter"></i>
     </button>
-    <button id="new-quote">New Quote</button>
+    <button id="new-quote" (click)="displayRandomQuote()">New Quote</button>
   </div>
 </div>
 } @else {
