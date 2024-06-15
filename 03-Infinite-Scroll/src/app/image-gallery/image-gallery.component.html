@@ -1,0 +1,17 @@
+<!-- Title -->
+<h1>Unsplash API - Infinity Scroll</h1>
+<!-- Loader -->
+<div class="loader" id="loader"></div>
+
+<!-- Image container -->
+<div class="image-container" id="image-container">
+  @if (photos) { @for (photo of photos; track photo?.id) {
+  <a href="{{ photo.links.html }}" target="_blank"></a>
+  <img
+    src="{{ photo.urls.regular }}"
+    alt="{{ photo.alt_description }}"
+    title="{{ photo.alt_description }}"
+    (load)="imageLoaded()"
+  />
+  } }
+</div>
