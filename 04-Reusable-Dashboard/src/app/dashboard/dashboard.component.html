@@ -1,0 +1,10 @@
+<div class="dashboard container">
+  <app-form-control (filteredValue)="onReceivingFilteredInput($event)" />
+  <section class="dashboard-items row">
+    @for (item of filteredItems(); track item) {
+    <app-dashboard-item [title]="item.title" [value]="item.value" />
+    } @empty {
+    <p>No items found</p>
+    }
+  </section>
+</div>
