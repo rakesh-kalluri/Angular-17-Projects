@@ -1,8 +1,8 @@
 <div class="dashboard container">
-  <app-form-control />
+  <app-form-control (filteredValue)="onReceivingFilteredInput($event)" />
   <section class="dashboard-items row">
-    <app-dashboard-item />
-    <app-dashboard-item />
-    <app-dashboard-item />
+    @for (item of filteredItems(); track item) {
+    <app-dashboard-item [title]="item.title" [value]="item.value" />
+    }
   </section>
 </div>
