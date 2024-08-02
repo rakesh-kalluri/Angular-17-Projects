@@ -1,1 +1,8 @@
-<p>notifications-container works!</p>
+<section class="notifications-container">
+  @for (notification of notifications(); track notification.id) {
+  <app-notification
+    [notification]="notification"
+    (dismissNotification)="onDismissNotification($event)"
+  />
+  }
+</section>
