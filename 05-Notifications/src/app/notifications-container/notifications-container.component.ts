@@ -18,5 +18,7 @@ export class NotificationsContainerComponent {
     return this.notificationService.getAllNotifications();
   });
 
-  onDismissNotification(id: string) {}
+  removeNotification(id: string) {
+    this.notificationService.removeNotification(id);
+  }
 }

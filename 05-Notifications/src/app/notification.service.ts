@@ -6,9 +6,11 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root',
 })
 export class NotificationService {
-  constructor() {}
-
   notifications = signal<Notification[]>([]);
+
+  constructor() {
+    this.loadInitialData();
+  }
 
   getAllNotifications = this.notifications.asReadonly();
 
@@ -30,6 +32,43 @@ export class NotificationService {
   removeNotification(id: string) {
     this.notifications.update((prevNotifications) =>
       [...prevNotifications].filter((notification) => notification.id !== id)
+    );
+  }
+
+  loadInitialData() {
+    const initialNotifications: Notification[] = [
+      {
+        id: uuidv4(),
+        type: 'success',
+        message: 'This is a success notification!',
+        duration: 5000,
+        dismissible: true,
+      },
+      {
+        id: uuidv4(),
+        type: 'error',
+        message: 'This is an error notification!',
+        duration: 5000,
+        dismissible: true,
+      },
+      {
+        id: uuidv4(),
+        type: 'info',
+        message: 'This is an info notification!',
+        duration: 5000,
+        dismissible: true,
+      },
+      {
+        id: uuidv4(),
+        type: 'warning',
+        message: 'This is a warning notification!',
+        duration: 5000,
+        dismissible: true,
+      },
+    ];
+
+    initialNotifications.forEach((notification) =>
+      this.addNotification(notification)
     );
   }
 }

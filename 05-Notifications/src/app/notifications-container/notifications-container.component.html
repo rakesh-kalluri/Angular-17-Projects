@@ -2,7 +2,9 @@
   @for (notification of notifications(); track notification.id) {
   <app-notification
     [notification]="notification"
-    (dismissNotification)="onDismissNotification($event)"
+    (dismissNotification)="removeNotification($event)"
   />
+  } @empty {
+  <p>No notifiication available at this time</p>
   }
 </section>
