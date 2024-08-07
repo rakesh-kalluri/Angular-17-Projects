@@ -1,1 +1,6 @@
-<p>notification works!</p>
+<article class="notification" [class]="notification().type">
+  <p>{{ notification().message }}</p>
+  @if(notification().dismissible){
+  <button (click)="dismiss()">Dismiss</button>
+  }
+</article>
