@@ -1,1 +1,26 @@
-<p>todo-list works!</p>
+<section>
+  <h2>To-Do List</h2>
+  <form (ngSubmit)="addTask()">
+    <div>
+      <label for="newTaskTitle">Task Title:</label>
+      <input
+        type="text"
+        id="newTaskTitle"
+        [(ngModel)]="enteredTitle"
+        name="newTaskTitle"
+      />
+    </div>
+    <div>
+      <label for="newTaskDueDate">Due Date:</label>
+      <input
+        id="newTaskDueDate"
+        type="date"
+        [(ngModel)]="enteredTaskDueDate"
+        name="enteredTaskDueDate"
+      />
+    </div>
+    <button type="submit">Add Task</button>
+  </form>
+
+  <ul></ul>
+</section>
